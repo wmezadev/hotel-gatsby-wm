@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './header';
 import Helmet from 'react-helmet';
 import { Global, css } from '@emotion/core';
+import Header from './header';
+import Footer from './footer';
 
 
 const Layout = (props) => {
@@ -41,7 +42,8 @@ const Layout = (props) => {
                 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto:400,700&display=swap" rel="stylesheet"/>
             </Helmet>
             <Header/>
-            {props.children} 
+                {props.children} 
+            <Footer/>
         </>
     );
 }
