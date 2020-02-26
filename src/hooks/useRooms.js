@@ -24,7 +24,8 @@ const useRooms = () => {
         title: room.title,
         id: room.id,
         slug: room.slug,
-        image: room.image
+        image: room.image,
+        content: room.content
     }));
 }
  
