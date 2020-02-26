@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import Navigation from './nav';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 const LinkHome = styled(Link)`
     color: #FFF;
@@ -12,7 +13,7 @@ const LinkHome = styled(Link)`
 
 const date = new Date().getFullYear();
 
-const Footer = () => {
+const Footer = ({title}) => {
     return (
         <>
             <footer
@@ -59,10 +60,14 @@ const Footer = () => {
                     `
                 }
             >
-                Hotel Gatsby. All right reserved {date} &copy; 
+                {title}. All right reserved {date} &copy; 
             </p>
         </>
     );
 }
  
+Footer.propTypes = {
+    title: PropTypes.string.isRequired
+}
+
 export default Footer;
