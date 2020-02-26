@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Image from 'gatsby-image';
+import { css } from '@emotion/core';
 
 export const query = graphql`
     query ($slug: String!) {
@@ -25,8 +26,19 @@ const RoomTemplate = ({ data: { allDatoCmsRoom: { nodes }} }) => {
 
     return ( 
         <Layout>
-            <main>
-                <h1>{title}</h1>
+            <main
+                css={css`
+                    margin: 0 auto;
+                    max-width: 1200px;
+                    width: 95%;
+                `}
+            >
+                <h1
+                    css={css`
+                        text-align: center;
+                        margin-top: 4rem;
+                    `}
+                >{title}</h1>
                 <p>{content}</p>
                 <Image
                     fluid={image.fluid}
