@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import Image from 'gatsby-image';
 
 export const query = graphql`
     query ($slug: String!) {
@@ -17,12 +19,20 @@ export const query = graphql`
     }
 `;
 
-const RoomTemplate = ({ data }) => {
+const RoomTemplate = ({ data: { allDatoCmsRoom: { nodes }} }) => {
 
-    console.log(data);
-    
+    const { title, content, image } = nodes[0];
+
     return ( 
-        <h1>Room.js</h1>
+        <Layout>
+            <main>
+                <h1>{title}</h1>
+                <p>{content}</p>
+                <Image
+                    fluid={image.fluid}
+                />
+            </main>
+        </Layout>
     );
 }
  
